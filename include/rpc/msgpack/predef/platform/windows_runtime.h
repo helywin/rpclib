@@ -9,25 +9,34 @@ http://www.boost.org/LICENSE_1_0.txt)
 #ifndef MSGPACK_PREDEF_PLAT_WINDOWS_RUNTIME_H
 #define MSGPACK_PREDEF_PLAT_WINDOWS_RUNTIME_H
 
-#include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 #include <rpc/msgpack/predef/os/windows.h>
+#include <rpc/msgpack/predef/platform/windows_phone.h>
+#include <rpc/msgpack/predef/platform/windows_store.h>
+#include <rpc/msgpack/predef/version_number.h>
 
-/*`
-[heading `MSGPACK_PLAT_WINDOWS_RUNTIME`]
+/* tag::reference[]
+= `MSGPACK_PLAT_WINDOWS_RUNTIME`
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+Deprecated.
 
-    [[`WINAPI_FAMILY == WINAPI_FAMILY_APP`] [__predef_detection__]]
-    [[`WINAPI_FAMILY == WINAPI_FAMILY_PHONE_APP`] [__predef_detection__]]
-    ]
- */
+https://docs.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide[UWP]
+for Windows Phone or Store development.  This does not align to the existing development model for
+UWP and is deprecated.  Use one of the other `MSGPACK_PLAT_WINDOWS_*`definitions instead.
+
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
+
+| `MSGPACK_PLAT_WINDOWS_PHONE` | {predef_detection}
+| `MSGPACK_PLAT_WINDOWS_STORE` | {predef_detection}
+|===
+*/ // end::reference[]
 
 #define MSGPACK_PLAT_WINDOWS_RUNTIME MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 
-#if MSGPACK_OS_WINDOWS && defined(WINAPI_FAMILY) && \
-    ( WINAPI_FAMILY == WINAPI_FAMILY_APP || WINAPI_FAMILY == WINAPI_FAMILY_PHONE_APP )
+#if MSGPACK_OS_WINDOWS && \
+    (MSGPACK_PLAT_WINDOWS_STORE || MSGPACK_PLAT_WINDOWS_PHONE)
 #   undef MSGPACK_PLAT_WINDOWS_RUNTIME
 #   define MSGPACK_PLAT_WINDOWS_RUNTIME MSGPACK_VERSION_NUMBER_AVAILABLE
 #endif

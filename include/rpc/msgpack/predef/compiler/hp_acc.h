@@ -11,20 +11,21 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_COMP_HPACC`]
+/* tag::reference[]
+= `MSGPACK_COMP_HPACC`
 
-HP aC++ compiler.
+HP a{CPP} compiler.
 Version number available as major, minor, and patch.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`__HP_aCC`] [__predef_detection__]]
+| `+__HP_aCC+` | {predef_detection}
 
-    [[`__HP_aCC`] [V.R.P]]
-    ]
- */
+| `+__HP_aCC+` | V.R.P
+|===
+*/ // end::reference[]
 
 #define MSGPACK_COMP_HPACC MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 

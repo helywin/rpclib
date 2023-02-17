@@ -11,41 +11,47 @@ http://www.boost.org/LICENSE_1_0.txt)
 
 #include <rpc/msgpack/predef/version_number.h>
 
-/*`
- Those defines represent Power PC SIMD extensions versions.
+/* tag::reference[]
+= `MSGPACK_HW_SIMD_PPC_*_VERSION`
 
- [note You *MUST* compare them with the predef `MSGPACK_HW_SIMD_PPC`.]
- */
+Those defines represent Power PC SIMD extensions versions.
+
+NOTE: You *MUST* compare them with the predef `MSGPACK_HW_SIMD_PPC`.
+*/ // end::reference[]
 
 // ---------------------------------
 
-/*`
- [heading `MSGPACK_HW_SIMD_PPC_VMX_VERSION`]
+/* tag::reference[]
+= `MSGPACK_HW_SIMD_PPC_VMX_VERSION`
 
- The [@https://en.wikipedia.org/wiki/AltiVec#VMX128 VMX] powerpc extension
- version number.
+The https://en.wikipedia.org/wiki/AltiVec#VMX128[VMX] powerpc extension
+version number.
 
- Version number is: *1.0.0*.
- */
+Version number is: *1.0.0*.
+*/ // end::reference[]
 #define MSGPACK_HW_SIMD_PPC_VMX_VERSION MSGPACK_VERSION_NUMBER(1, 0, 0)
 
-/*`
- [heading `MSGPACK_HW_SIMD_PPC_VSX_VERSION`]
+/* tag::reference[]
+= `MSGPACK_HW_SIMD_PPC_VSX_VERSION`
 
- The [@https://en.wikipedia.org/wiki/AltiVec#VSX VSX] powerpc extension version
- number.
+The https://en.wikipedia.org/wiki/AltiVec#VSX[VSX] powerpc extension version
+number.
 
- Version number is: *1.1.0*.
- */
+Version number is: *1.1.0*.
+*/ // end::reference[]
 #define MSGPACK_HW_SIMD_PPC_VSX_VERSION MSGPACK_VERSION_NUMBER(1, 1, 0)
 
-/*`
- [heading `MSGPACK_HW_SIMD_PPC_QPX_VERSION`]
+/* tag::reference[]
+= `MSGPACK_HW_SIMD_PPC_QPX_VERSION`
 
- The QPX powerpc extension version number.
+The QPX powerpc extension version number.
 
- Version number is: *2.0.0*.
- */
+Version number is: *2.0.0*.
+*/ // end::reference[]
 #define MSGPACK_HW_SIMD_PPC_QPX_VERSION MSGPACK_VERSION_NUMBER(2, 0, 0)
+
+/* tag::reference[]
+
+*/ // end::reference[]
 
 #endif

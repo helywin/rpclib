@@ -11,25 +11,31 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_OS_CYGWIN`]
+/* tag::reference[]
+= `MSGPACK_OS_CYGWIN`
 
-[@http://en.wikipedia.org/wiki/Cygwin Cygwin] evironment.
+http://en.wikipedia.org/wiki/Cygwin[Cygwin] evironment.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`__CYGWIN__`] [__predef_detection__]]
-    ]
- */
+| `+__CYGWIN__+` | {predef_detection}
+
+| `CYGWIN_VERSION_API_MAJOR`, `CYGWIN_VERSION_API_MINOR` | V.R.0
+|===
+*/ // end::reference[]
 
 #define MSGPACK_OS_CYGWIN MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 
 #if !defined(MSGPACK_PREDEF_DETAIL_OS_DETECTED) && ( \
     defined(__CYGWIN__) \
     )
+#   include <cygwin/version.h>
 #   undef MSGPACK_OS_CYGWIN
-#   define MSGPACK_OS_CYGWIN MSGPACK_VERSION_NUMBER_AVAILABLE
+#   define MSGPACK_OS_CYGWIN \
+        MSGPACK_VERSION_NUMBER(CYGWIN_VERSION_API_MAJOR,\
+                             CYGWIN_VERSION_API_MINOR, 0)
 #endif
 
 #if MSGPACK_OS_CYGWIN

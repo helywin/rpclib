@@ -11,18 +11,19 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_OS_SOLARIS`]
+/* tag::reference[]
+= `MSGPACK_OS_SOLARIS`
 
-[@http://en.wikipedia.org/wiki/Solaris_Operating_Environment Solaris] operating system.
+http://en.wikipedia.org/wiki/Solaris_Operating_Environment[Solaris] operating system.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`sun`] [__predef_detection__]]
-    [[`__sun`] [__predef_detection__]]
-    ]
- */
+| `sun` | {predef_detection}
+| `+__sun+` | {predef_detection}
+|===
+*/ // end::reference[]
 
 #define MSGPACK_OS_SOLARIS MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 

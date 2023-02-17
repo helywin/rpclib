@@ -10,17 +10,18 @@ http://www.boost.org/LICENSE_1_0.txt)
 
 #include <rpc/msgpack/predef/os/bsd.h>
 
-/*`
-[heading `MSGPACK_OS_BSD_DRAGONFLY`]
+/* tag::reference[]
+= `MSGPACK_OS_BSD_DRAGONFLY`
 
-[@http://en.wikipedia.org/wiki/DragonFly_BSD DragonFly BSD] operating system.
+http://en.wikipedia.org/wiki/DragonFly_BSD[DragonFly BSD] operating system.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`__DragonFly__`] [__predef_detection__]]
-    ]
- */
+| `+__DragonFly__+` | {predef_detection}
+|===
+*/ // end::reference[]
 
 #define MSGPACK_OS_BSD_DRAGONFLY MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 
@@ -28,6 +29,7 @@ http://www.boost.org/LICENSE_1_0.txt)
     defined(__DragonFly__) \
     )
 #   ifndef MSGPACK_OS_BSD_AVAILABLE
+#       undef MSGPACK_OS_BSD
 #       define MSGPACK_OS_BSD MSGPACK_VERSION_NUMBER_AVAILABLE
 #       define MSGPACK_OS_BSD_AVAILABLE
 #   endif

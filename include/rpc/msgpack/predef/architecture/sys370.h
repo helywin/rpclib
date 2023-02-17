@@ -11,18 +11,19 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_ARCH_SYS370`]
+/* tag::reference[]
+= `MSGPACK_ARCH_SYS370`
 
-[@http://en.wikipedia.org/wiki/System/370 System/370] architecture.
+http://en.wikipedia.org/wiki/System/370[System/370] architecture.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`__370__`] [__predef_detection__]]
-    [[`__THW_370__`] [__predef_detection__]]
-    ]
- */
+| `+__370__+` | {predef_detection}
+| `+__THW_370__+` | {predef_detection}
+|===
+*/ // end::reference[]
 
 #define MSGPACK_ARCH_SYS370 MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 
@@ -33,6 +34,11 @@ http://www.boost.org/LICENSE_1_0.txt)
 
 #if MSGPACK_ARCH_SYS370
 #   define MSGPACK_ARCH_SYS370_AVAILABLE
+#endif
+
+#if MSGPACK_ARCH_SYS370
+#   undef MSGPACK_ARCH_WORD_BITS_32
+#   define MSGPACK_ARCH_WORD_BITS_32 MSGPACK_VERSION_NUMBER_AVAILABLE
 #endif
 
 #define MSGPACK_ARCH_SYS370_NAME "System/370"

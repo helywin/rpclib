@@ -13,7 +13,6 @@ http://www.boost.org/LICENSE_1_0.txt)
 
 #include <rpc/msgpack/predef/os/aix.h>
 #include <rpc/msgpack/predef/os/amigaos.h>
-#include <rpc/msgpack/predef/os/android.h>
 #include <rpc/msgpack/predef/os/beos.h>
 #include <rpc/msgpack/predef/os/bsd.h>
 #include <rpc/msgpack/predef/os/cygwin.h>

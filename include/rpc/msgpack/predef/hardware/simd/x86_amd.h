@@ -12,42 +12,44 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/hardware/simd/x86_amd/versions.h>
 
-/*`
- [heading `MSGPACK_HW_SIMD_X86_AMD`]
+/* tag::reference[]
+= `MSGPACK_HW_SIMD_X86_AMD`
 
- The SIMD extension for x86 (AMD) (*if detected*).
- Version number depends on the most recent detected extension.
+The SIMD extension for x86 (AMD) (*if detected*).
+Version number depends on the most recent detected extension.
 
- [table
-     [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-     [[`__SSE4A__`] [__predef_detection__]]
+| `+__SSE4A__+` | {predef_detection}
 
-     [[`__FMA4__`] [__predef_detection__]]
+| `+__FMA4__+` | {predef_detection}
 
-     [[`__XOP__`] [__predef_detection__]]
+| `+__XOP__+` | {predef_detection}
 
-     [[`MSGPACK_HW_SIMD_X86`] [__predef_detection__]]
-     ]
+| `MSGPACK_HW_SIMD_X86` | {predef_detection}
+|===
 
- [table
-     [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-     [[`__SSE4A__`] [MSGPACK_HW_SIMD_X86_SSE4A_VERSION]]
+| `+__SSE4A__+` | MSGPACK_HW_SIMD_X86_SSE4A_VERSION
 
-     [[`__FMA4__`] [MSGPACK_HW_SIMD_X86_FMA4_VERSION]]
+| `+__FMA4__+` | MSGPACK_HW_SIMD_X86_FMA4_VERSION
 
-     [[`__XOP__`] [MSGPACK_HW_SIMD_X86_XOP_VERSION]]
+| `+__XOP__+` | MSGPACK_HW_SIMD_X86_XOP_VERSION
 
-     [[`MSGPACK_HW_SIMD_X86`] [MSGPACK_HW_SIMD_X86]]
-     ]
+| `MSGPACK_HW_SIMD_X86` | MSGPACK_HW_SIMD_X86
+|===
 
- [note This predef includes every other x86 SIMD extensions and also has other
- more specific extensions (FMA4, XOP, SSE4a). You should use this predef
- instead of `MSGPACK_HW_SIMD_X86` to test if those specific extensions have
- been detected.]
+NOTE: This predef includes every other x86 SIMD extensions and also has other
+more specific extensions (FMA4, XOP, SSE4a). You should use this predef
+instead of `MSGPACK_HW_SIMD_X86` to test if those specific extensions have
+been detected.
 
- */
+*/ // end::reference[]
 
 #define MSGPACK_HW_SIMD_X86_AMD MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 

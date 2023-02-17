@@ -11,17 +11,18 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_COMP_GCCXML`]
+/* tag::reference[]
+= `MSGPACK_COMP_GCCXML`
 
-[@http://www.gccxml.org/ GCC XML] compiler.
+http://www.gccxml.org/[GCC XML] compiler.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`__GCCXML__`] [__predef_detection__]]
-    ]
- */
+| `+__GCCXML__+` | {predef_detection}
+|===
+*/ // end::reference[]
 
 #define MSGPACK_COMP_GCCXML MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 

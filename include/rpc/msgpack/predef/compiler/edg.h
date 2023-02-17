@@ -11,20 +11,21 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_COMP_EDG`]
+/* tag::reference[]
+= `MSGPACK_COMP_EDG`
 
-[@http://en.wikipedia.org/wiki/Edison_Design_Group EDG C++ Frontend] compiler.
+http://en.wikipedia.org/wiki/Edison_Design_Group[EDG {CPP} Frontend] compiler.
 Version number available as major, minor, and patch.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`__EDG__`] [__predef_detection__]]
+| `+__EDG__+` | {predef_detection}
 
-    [[`__EDG_VERSION__`] [V.R.0]]
-    ]
- */
+| `+__EDG_VERSION__+` | V.R.0
+|===
+*/ // end::reference[]
 
 #define MSGPACK_COMP_EDG MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 

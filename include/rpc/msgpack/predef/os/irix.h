@@ -11,18 +11,19 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_OS_IRIX`]
+/* tag::reference[]
+= `MSGPACK_OS_IRIX`
 
-[@http://en.wikipedia.org/wiki/Irix IRIX] operating system.
+http://en.wikipedia.org/wiki/Irix[IRIX] operating system.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`sgi`] [__predef_detection__]]
-    [[`__sgi`] [__predef_detection__]]
-    ]
- */
+| `sgi` | {predef_detection}
+| `+__sgi+` | {predef_detection}
+|===
+*/ // end::reference[]
 
 #define MSGPACK_OS_IRIX MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 

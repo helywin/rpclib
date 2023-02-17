@@ -13,8 +13,8 @@ http://www.boost.org/LICENSE_1_0.txt)
 Shorthands for the common version number formats used by vendors...
 */
 
-/*`
-[heading `MSGPACK_PREDEF_MAKE_..` macros]
+/* tag::reference[]
+= `MSGPACK_PREDEF_MAKE_..` macros
 
 These set of macros decompose common vendor version number
 macros which are composed version, revision, and patch digits.
@@ -27,63 +27,137 @@ The naming convention indicates:
   indicates an ignored digit.
 
 Macros are:
-*/
-/*` `MSGPACK_PREDEF_MAKE_0X_VRP(V)` */
+
+*/ // end::reference[]
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_0X_VRP(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_0X_VRP(V) MSGPACK_VERSION_NUMBER((V&0xF00)>>8,(V&0xF0)>>4,(V&0xF))
-/*` `MSGPACK_PREDEF_MAKE_0X_VVRP(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_0X_VVRP(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_0X_VVRP(V) MSGPACK_VERSION_NUMBER((V&0xFF00)>>8,(V&0xF0)>>4,(V&0xF))
-/*` `MSGPACK_PREDEF_MAKE_0X_VRPP(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_0X_VRPP(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_0X_VRPP(V) MSGPACK_VERSION_NUMBER((V&0xF000)>>12,(V&0xF00)>>8,(V&0xFF))
-/*` `MSGPACK_PREDEF_MAKE_0X_VVRR(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_0X_VVRR(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_0X_VVRR(V) MSGPACK_VERSION_NUMBER((V&0xFF00)>>8,(V&0xFF),0)
-/*` `MSGPACK_PREDEF_MAKE_0X_VRRPPPP(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_0X_VRRPPPP(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_0X_VRRPPPP(V) MSGPACK_VERSION_NUMBER((V&0xF000000)>>24,(V&0xFF0000)>>16,(V&0xFFFF))
-/*` `MSGPACK_PREDEF_MAKE_0X_VVRRP(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_0X_VVRRP(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_0X_VVRRP(V) MSGPACK_VERSION_NUMBER((V&0xFF000)>>12,(V&0xFF0)>>4,(V&0xF))
-/*` `MSGPACK_PREDEF_MAKE_0X_VRRPP000(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_0X_VRRPP000(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_0X_VRRPP000(V) MSGPACK_VERSION_NUMBER((V&0xF0000000)>>28,(V&0xFF00000)>>20,(V&0xFF000)>>12)
-/*` `MSGPACK_PREDEF_MAKE_0X_VVRRPP(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_0X_VVRRPP(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_0X_VVRRPP(V) MSGPACK_VERSION_NUMBER((V&0xFF0000)>>16,(V&0xFF00)>>8,(V&0xFF))
-/*` `MSGPACK_PREDEF_MAKE_10_VPPP(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VPPP(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_10_VPPP(V) MSGPACK_VERSION_NUMBER(((V)/1000)%10,0,(V)%1000)
-/*` `MSGPACK_PREDEF_MAKE_10_VRP(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VVPPP(V)`
+*/ // end::reference[]
+#define MSGPACK_PREDEF_MAKE_10_VVPPP(V) MSGPACK_VERSION_NUMBER(((V)/1000)%100,0,(V)%1000)
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VR0(V)`
+*/ // end::reference[]
+#define MSGPACK_PREDEF_MAKE_10_VR0(V) MSGPACK_VERSION_NUMBER(((V)/100)%10,((V)/10)%10,0)
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VRP(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_10_VRP(V) MSGPACK_VERSION_NUMBER(((V)/100)%10,((V)/10)%10,(V)%10)
-/*` `MSGPACK_PREDEF_MAKE_10_VRP000(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VRP000(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_10_VRP000(V) MSGPACK_VERSION_NUMBER(((V)/100000)%10,((V)/10000)%10,((V)/1000)%10)
-/*` `MSGPACK_PREDEF_MAKE_10_VRPP(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VRPPPP(V)`
+*/ // end::reference[]
+#define MSGPACK_PREDEF_MAKE_10_VRPPPP(V) MSGPACK_VERSION_NUMBER(((V)/100000)%10,((V)/10000)%10,(V)%10000)
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VRPP(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_10_VRPP(V) MSGPACK_VERSION_NUMBER(((V)/1000)%10,((V)/100)%10,(V)%100)
-/*` `MSGPACK_PREDEF_MAKE_10_VRR(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VRR(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_10_VRR(V) MSGPACK_VERSION_NUMBER(((V)/100)%10,(V)%100,0)
-/*` `MSGPACK_PREDEF_MAKE_10_VRRPP(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VRRPP(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_10_VRRPP(V) MSGPACK_VERSION_NUMBER(((V)/10000)%10,((V)/100)%100,(V)%100)
-/*` `MSGPACK_PREDEF_MAKE_10_VRR000(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VRR000(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_10_VRR000(V) MSGPACK_VERSION_NUMBER(((V)/100000)%10,((V)/1000)%100,0)
-/*` `MSGPACK_PREDEF_MAKE_10_VV00(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VV00(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_10_VV00(V) MSGPACK_VERSION_NUMBER(((V)/100)%100,0,0)
-/*` `MSGPACK_PREDEF_MAKE_10_VVRR(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VVRR(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_10_VVRR(V) MSGPACK_VERSION_NUMBER(((V)/100)%100,(V)%100,0)
-/*` `MSGPACK_PREDEF_MAKE_10_VVRRPP(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VVRRP(V)`
+*/ // end::reference[]
+#define MSGPACK_PREDEF_MAKE_10_VVRRP(V) MSGPACK_VERSION_NUMBER(((V)/1000)%100,((V)/10)%100,(V)%10)
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VVRRPP(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_10_VVRRPP(V) MSGPACK_VERSION_NUMBER(((V)/10000)%100,((V)/100)%100,(V)%100)
-/*` `MSGPACK_PREDEF_MAKE_10_VVRR0PP00(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VVRRPPP(V)`
+*/ // end::reference[]
+#define MSGPACK_PREDEF_MAKE_10_VVRRPPP(V) MSGPACK_VERSION_NUMBER(((V)/100000)%100,((V)/1000)%100,(V)%1000)
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VVRR0PP00(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_10_VVRR0PP00(V) MSGPACK_VERSION_NUMBER(((V)/10000000)%100,((V)/100000)%100,((V)/100)%100)
-/*` `MSGPACK_PREDEF_MAKE_10_VVRR0PPPP(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VVRR0PPPP(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_10_VVRR0PPPP(V) MSGPACK_VERSION_NUMBER(((V)/10000000)%100,((V)/100000)%100,(V)%10000)
-/*` `MSGPACK_PREDEF_MAKE_10_VVRR00PP00(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_10_VVRR00PP00(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_10_VVRR00PP00(V) MSGPACK_VERSION_NUMBER(((V)/100000000)%100,((V)/1000000)%100,((V)/100)%100)
-/*`
-[heading `MSGPACK_PREDEF_MAKE_*..` date macros]
+
+/* tag::reference[]
+
+= `MSGPACK_PREDEF_MAKE_*..` date macros
 
 Date decomposition macros return a date in the relative to the 1970
 Epoch date. If the month is not available, January 1st is used as the month and day.
 If the day is not available, but the month is, the 1st of the month is used as the day.
-*/
-/*` `MSGPACK_PREDEF_MAKE_DATE(Y,M,D)` */
+
+*/ // end::reference[]
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_DATE(Y,M,D)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_DATE(Y,M,D) MSGPACK_VERSION_NUMBER((Y)%10000-1970,(M)%100,(D)%100)
-/*` `MSGPACK_PREDEF_MAKE_YYYYMMDD(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_YYYYMMDD(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_YYYYMMDD(V) MSGPACK_PREDEF_MAKE_DATE(((V)/10000)%10000,((V)/100)%100,(V)%100)
-/*` `MSGPACK_PREDEF_MAKE_YYYY(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_YYYY(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_YYYY(V) MSGPACK_PREDEF_MAKE_DATE(V,1,1)
-/*` `MSGPACK_PREDEF_MAKE_YYYYMM(V)` */
+/* tag::reference[]
+* `MSGPACK_PREDEF_MAKE_YYYYMM(V)`
+*/ // end::reference[]
 #define MSGPACK_PREDEF_MAKE_YYYYMM(V) MSGPACK_PREDEF_MAKE_DATE((V)/100,(V)%100,1)
 
 #endif

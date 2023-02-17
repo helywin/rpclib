@@ -11,22 +11,28 @@ http://www.boost.org/LICENSE_1_0.txt)
 
 #include <rpc/msgpack/predef/version_number.h>
 
-/*`
- Those defines represent ARM SIMD extensions versions.
+/* tag::reference[]
+= `MSGPACK_HW_SIMD_ARM_*_VERSION`
 
- [note You *MUST* compare them with the predef `MSGPACK_HW_SIMD_ARM`.]
- */
+Those defines represent ARM SIMD extensions versions.
+
+NOTE: You *MUST* compare them with the predef `MSGPACK_HW_SIMD_ARM`.
+*/ // end::reference[]
 
 // ---------------------------------
 
-/*`
- [heading `MSGPACK_HW_SIMD_ARM_NEON_VERSION`]
+/* tag::reference[]
+= `MSGPACK_HW_SIMD_ARM_NEON_VERSION`
 
- The [@https://en.wikipedia.org/wiki/ARM_architecture#Advanced_SIMD_.28NEON.29 NEON]
- ARM extension version number.
+The https://en.wikipedia.org/wiki/ARM_architecture#Advanced_SIMD_.28NEON.29[NEON]
+ARM extension version number.
 
- Version number is: *1.0.0*.
- */
+Version number is: *1.0.0*.
+*/ // end::reference[]
 #define MSGPACK_HW_SIMD_ARM_NEON_VERSION MSGPACK_VERSION_NUMBER(1, 0, 0)
+
+/* tag::reference[]
+
+*/ // end::reference[]
 
 #endif

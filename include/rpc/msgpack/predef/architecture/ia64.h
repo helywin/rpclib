@@ -11,22 +11,23 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_ARCH_IA64`]
+/* tag::reference[]
+= `MSGPACK_ARCH_IA64`
 
-[@http://en.wikipedia.org/wiki/Ia64 Intel Itanium 64] architecture.
+http://en.wikipedia.org/wiki/Ia64[Intel Itanium 64] architecture.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`__ia64__`] [__predef_detection__]]
-    [[`_IA64`] [__predef_detection__]]
-    [[`__IA64__`] [__predef_detection__]]
-    [[`__ia64`] [__predef_detection__]]
-    [[`_M_IA64`] [__predef_detection__]]
-    [[`__itanium__`] [__predef_detection__]]
-    ]
- */
+| `+__ia64__+` | {predef_detection}
+| `+_IA64+` | {predef_detection}
+| `+__IA64__+` | {predef_detection}
+| `+__ia64+` | {predef_detection}
+| `+_M_IA64+` | {predef_detection}
+| `+__itanium__+` | {predef_detection}
+|===
+*/ // end::reference[]
 
 #define MSGPACK_ARCH_IA64 MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 
@@ -39,6 +40,11 @@ http://www.boost.org/LICENSE_1_0.txt)
 
 #if MSGPACK_ARCH_IA64
 #   define MSGPACK_ARCH_IA64_AVAILABLE
+#endif
+
+#if MSGPACK_ARCH_IA64
+#   undef MSGPACK_ARCH_WORD_BITS_64
+#   define MSGPACK_ARCH_WORD_BITS_64 MSGPACK_VERSION_NUMBER_AVAILABLE
 #endif
 
 #define MSGPACK_ARCH_IA64_NAME "Intel Itanium 64"

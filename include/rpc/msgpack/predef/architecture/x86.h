@@ -11,13 +11,13 @@ http://www.boost.org/LICENSE_1_0.txt)
 #ifndef MSGPACK_PREDEF_ARCHITECTURE_X86_H
 #define MSGPACK_PREDEF_ARCHITECTURE_X86_H
 
-/*`
-[heading `MSGPACK_ARCH_X86`]
+/* tag::reference[]
+= `MSGPACK_ARCH_X86`
 
-[@http://en.wikipedia.org/wiki/X86 Intel x86] architecture. This is
+http://en.wikipedia.org/wiki/X86[Intel x86] architecture. This is
 a category to indicate that either `MSGPACK_ARCH_X86_32` or
 `MSGPACK_ARCH_X86_64` is detected.
- */
+*/ // end::reference[]
 
 #define MSGPACK_ARCH_X86 MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 

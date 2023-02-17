@@ -11,20 +11,21 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_COMP_SYSC`]
+/* tag::reference[]
+= `MSGPACK_COMP_SYSC`
 
-[@http://www.dignus.com/dcxx/ Dignus Systems/C++] compiler.
+http://www.dignus.com/dcxx/[Dignus Systems/{CPP}] compiler.
 Version number available as major, minor, and patch.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`__SYSC__`] [__predef_detection__]]
+| `+__SYSC__+` | {predef_detection}
 
-    [[`__SYSC_VER__`] [V.R.P]]
-    ]
- */
+| `+__SYSC_VER__+` | V.R.P
+|===
+*/ // end::reference[]
 
 #define MSGPACK_COMP_SYSC MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 

@@ -11,20 +11,21 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_COMP_KCC`]
+/* tag::reference[]
+= `MSGPACK_COMP_KCC`
 
-Kai C++ compiler.
+Kai {CPP} compiler.
 Version number available as major, minor, and patch.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`__KCC`] [__predef_detection__]]
+| `+__KCC+` | {predef_detection}
 
-    [[`__KCC_VERSION`] [V.R.P]]
-    ]
- */
+| `+__KCC_VERSION+` | V.R.P
+|===
+*/ // end::reference[]
 
 #define MSGPACK_COMP_KCC MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 

@@ -12,34 +12,38 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/hardware/simd/arm/versions.h>
 
-/*`
- [heading `MSGPACK_HW_SIMD_ARM`]
+/* tag::reference[]
+= `MSGPACK_HW_SIMD_ARM`
 
- The SIMD extension for ARM (*if detected*).
- Version number depends on the most recent detected extension.
+The SIMD extension for ARM (*if detected*).
+Version number depends on the most recent detected extension.
 
- [table
-     [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-     [[`__ARM_NEON__`] [__predef_detection__]]
-     [[`__aarch64__`] [__predef_detection__]]
-     [[`_M_ARM`] [__predef_detection__]]
-     ]
+| `+__ARM_NEON__+` | {predef_detection}
+| `+__aarch64__+` | {predef_detection}
+| `+_M_ARM+` | {predef_detection}
+| `+_M_ARM64+` | {predef_detection}
+|===
 
- [table
-     [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-     [[`__ARM_NEON__`] [MSGPACK_HW_SIMD_ARM_NEON_VERSION]]
-     [[`__aarch64__`] [MSGPACK_HW_SIMD_ARM_NEON_VERSION]]
-     [[`_M_ARM`] [MSGPACK_HW_SIMD_ARM_NEON_VERSION]]
-     ]
+| `+__ARM_NEON__+` | MSGPACK_HW_SIMD_ARM_NEON_VERSION
+| `+__aarch64__+` | MSGPACK_HW_SIMD_ARM_NEON_VERSION
+| `+_M_ARM+` | MSGPACK_HW_SIMD_ARM_NEON_VERSION
+| `+_M_ARM64+` | MSGPACK_HW_SIMD_ARM_NEON_VERSION
+|===
 
- */
+*/ // end::reference[]
 
 #define MSGPACK_HW_SIMD_ARM MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 
 #undef MSGPACK_HW_SIMD_ARM
-#if !defined(MSGPACK_HW_SIMD_ARM) && (defined(__ARM_NEON__) || defined(__aarch64__) || defined (_M_ARM))
+#if !defined(MSGPACK_HW_SIMD_ARM) && (defined(__ARM_NEON__) || defined(__aarch64__) || defined (_M_ARM) || defined (_M_ARM64))
 #   define MSGPACK_HW_SIMD_ARM MSGPACK_HW_SIMD_ARM_NEON_VERSION
 #endif
 

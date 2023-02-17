@@ -11,17 +11,18 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_ARCH_PYRAMID`]
+/* tag::reference[]
+= `MSGPACK_ARCH_PYRAMID`
 
 Pyramid 9810 architecture.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`pyr`] [__predef_detection__]]
-    ]
- */
+| `pyr` | {predef_detection}
+|===
+*/ // end::reference[]
 
 #define MSGPACK_ARCH_PYRAMID MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 
@@ -32,6 +33,11 @@ Pyramid 9810 architecture.
 
 #if MSGPACK_ARCH_PYRAMID
 #   define MSGPACK_ARCH_PYRAMID_AVAILABLE
+#endif
+
+#if MSGPACK_ARCH_PYRAMID
+#   undef MSGPACK_ARCH_WORD_BITS_32
+#   define MSGPACK_ARCH_WORD_BITS_32 MSGPACK_VERSION_NUMBER_AVAILABLE
 #endif
 
 #define MSGPACK_ARCH_PYRAMID_NAME "Pyramid 9810"

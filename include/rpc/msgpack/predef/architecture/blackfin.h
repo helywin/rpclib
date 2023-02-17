@@ -11,20 +11,21 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_ARCH_BLACKFIN`]
+/* tag::reference[]
+= `MSGPACK_ARCH_BLACKFIN`
 
 Blackfin Processors from Analog Devices.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`__bfin__`] [__predef_detection__]]
-    [[`__BFIN__`] [__predef_detection__]]
-    [[`bfin`] [__predef_detection__]]
-    [[`BFIN`] [__predef_detection__]]
-    ]
- */
+| `+__bfin__+` | {predef_detection}
+| `+__BFIN__+` | {predef_detection}
+| `bfin` | {predef_detection}
+| `BFIN` | {predef_detection}
+|===
+*/ // end::reference[]
 
 #define MSGPACK_ARCH_BLACKFIN MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 
@@ -36,6 +37,11 @@ Blackfin Processors from Analog Devices.
 
 #if MSGPACK_ARCH_BLACKFIN
 #   define MSGPACK_ARCH_BLACKFIN_AVAILABLE
+#endif
+
+#if MSGPACK_ARCH_BLACKFIN
+#   undef MSGPACK_ARCH_WORD_BITS_16
+#   define MSGPACK_ARCH_WORD_BITS_16 MSGPACK_VERSION_NUMBER_AVAILABLE
 #endif
 
 #define MSGPACK_ARCH_BLACKFIN_NAME "Blackfin"

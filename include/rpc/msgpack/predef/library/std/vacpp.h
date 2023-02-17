@@ -13,17 +13,18 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_LIB_STD_IBM`]
+/* tag::reference[]
+= `MSGPACK_LIB_STD_IBM`
 
-[@http://www.ibm.com/software/awdtools/xlcpp/ IBM VACPP Standard C++] library.
+http://www.ibm.com/software/awdtools/xlcpp/[IBM VACPP Standard {CPP}] library.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`__IBMCPP__`] [__predef_detection__]]
-    ]
- */
+| `+__IBMCPP__+` | {predef_detection}
+|===
+*/ // end::reference[]
 
 #define MSGPACK_LIB_STD_IBM MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 

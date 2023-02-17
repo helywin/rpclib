@@ -9,25 +9,32 @@ http://www.boost.org/LICENSE_1_0.txt)
 #ifndef MSGPACK_PREDEF_PLAT_WINDOWS_DESKTOP_H
 #define MSGPACK_PREDEF_PLAT_WINDOWS_DESKTOP_H
 
-#include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 #include <rpc/msgpack/predef/os/windows.h>
+#include <rpc/msgpack/predef/platform/windows_uwp.h>
+#include <rpc/msgpack/predef/version_number.h>
 
-/*`
-[heading `MSGPACK_PLAT_WINDOWS_DESKTOP`]
+/* tag::reference[]
+= `MSGPACK_PLAT_WINDOWS_DESKTOP`
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+https://docs.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide[UWP]
+for Windows Desktop development.  Also available if the Platform SDK is too
+old to support UWP.
 
-    [[`!WINAPI_FAMILY`] [__predef_detection__]]
-    [[`WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP`] [__predef_detection__]]
-    ]
- */
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
+
+| `WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP` | {predef_detection}
+| `!MSGPACK_PLAT_WINDOWS_UWP` | {predef_detection}
+|===
+*/ // end::reference[]
 
 #define MSGPACK_PLAT_WINDOWS_DESKTOP MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 
 #if MSGPACK_OS_WINDOWS && \
-    ( !defined(WINAPI_FAMILY) || (WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP) )
+    ((defined(WINAPI_FAMILY_DESKTOP_APP) && WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP) || \
+     !MSGPACK_PLAT_WINDOWS_UWP)
 #   undef MSGPACK_PLAT_WINDOWS_DESKTOP
 #   define MSGPACK_PLAT_WINDOWS_DESKTOP MSGPACK_VERSION_NUMBER_AVAILABLE
 #endif

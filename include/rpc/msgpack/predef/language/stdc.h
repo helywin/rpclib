@@ -11,20 +11,21 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_LANG_STDC`]
+/* tag::reference[]
+= `MSGPACK_LANG_STDC`
 
-[@http://en.wikipedia.org/wiki/C_(programming_language) Standard C] language.
-If available, the year of the standard is detected as YYYY.MM.1 from the Epoc date.
+http://en.wikipedia.org/wiki/C_(programming_language)[Standard C] language.
+If available, the year of the standard is detected as YYYY.MM.1 from the Epoch date.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`__STDC__`] [__predef_detection__]]
+| `+__STDC__+` | {predef_detection}
 
-    [[`__STDC_VERSION__`] [V.R.P]]
-    ]
- */
+| `+__STDC_VERSION__+` | V.R.P
+|===
+*/ // end::reference[]
 
 #define MSGPACK_LANG_STDC MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 

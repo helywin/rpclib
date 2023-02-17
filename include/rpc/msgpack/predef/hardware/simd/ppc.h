@@ -12,35 +12,37 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/hardware/simd/ppc/versions.h>
 
-/*`
- [heading `MSGPACK_HW_SIMD_PPC`]
+/* tag::reference[]
+= `MSGPACK_HW_SIMD_PPC`
 
- The SIMD extension for PowerPC (*if detected*).
- Version number depends on the most recent detected extension.
+The SIMD extension for PowerPC (*if detected*).
+Version number depends on the most recent detected extension.
 
- [table
-     [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-     [[`__VECTOR4DOUBLE__`] [__predef_detection__]]
+| `+__VECTOR4DOUBLE__+` | {predef_detection}
 
-     [[`__ALTIVEC__`] [__predef_detection__]]
-     [[`__VEC__`] [__predef_detection__]]
+| `+__ALTIVEC__+` | {predef_detection}
+| `+__VEC__+` | {predef_detection}
 
-     [[`__VSX__`] [__predef_detection__]]
-     ]
+| `+__VSX__+` | {predef_detection}
+|===
 
- [table
-     [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-     [[`__VECTOR4DOUBLE__`] [MSGPACK_HW_SIMD_PPC_QPX_VERSION]]
+| `+__VECTOR4DOUBLE__+` | MSGPACK_HW_SIMD_PPC_QPX_VERSION
 
-     [[`__ALTIVEC__`] [MSGPACK_HW_SIMD_PPC_VMX_VERSION]]
-     [[`__VEC__`] [MSGPACK_HW_SIMD_PPC_VMX_VERSION]]
+| `+__ALTIVEC__+` | MSGPACK_HW_SIMD_PPC_VMX_VERSION
+| `+__VEC__+` | MSGPACK_HW_SIMD_PPC_VMX_VERSION
 
-     [[`__VSX__`] [MSGPACK_HW_SIMD_PPC_VSX_VERSION]]
-     ]
+| `+__VSX__+` | MSGPACK_HW_SIMD_PPC_VSX_VERSION
+|===
 
- */
+*/ // end::reference[]
 
 #define MSGPACK_HW_SIMD_PPC MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 

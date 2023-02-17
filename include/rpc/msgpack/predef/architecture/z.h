@@ -11,17 +11,18 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_ARCH_Z`]
+/* tag::reference[]
+= `MSGPACK_ARCH_Z`
 
-[@http://en.wikipedia.org/wiki/Z/Architecture z/Architecture] architecture.
+http://en.wikipedia.org/wiki/Z/Architecture[z/Architecture] architecture.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`__SYSC_ZARCH__`] [__predef_detection__]]
-    ]
- */
+| `+__SYSC_ZARCH__+` | {predef_detection}
+|===
+*/ // end::reference[]
 
 #define MSGPACK_ARCH_Z MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 
@@ -32,6 +33,11 @@ http://www.boost.org/LICENSE_1_0.txt)
 
 #if MSGPACK_ARCH_Z
 #   define MSGPACK_ARCH_Z_AVAILABLE
+#endif
+
+#if MSGPACK_ARCH_Z
+#   undef MSGPACK_ARCH_WORD_BITS_64
+#   define MSGPACK_ARCH_WORD_BITS_64 MSGPACK_VERSION_NUMBER_AVAILABLE
 #endif
 
 #define MSGPACK_ARCH_Z_NAME "z/Architecture"

@@ -13,20 +13,21 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_LIB_STD_SGI`]
+/* tag::reference[]
+= `MSGPACK_LIB_STD_SGI`
 
-[@http://www.sgi.com/tech/stl/ SGI] Standard C++ library.
+http://www.sgi.com/tech/stl/[SGI] Standard {CPP} library.
 If available version number as major, minor, and patch.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`__STL_CONFIG_H`] [__predef_detection__]]
+| `+__STL_CONFIG_H+` | {predef_detection}
 
-    [[`__SGI_STL`] [V.R.P]]
-    ]
- */
+| `+__SGI_STL+` | V.R.P
+|===
+*/ // end::reference[]
 
 #define MSGPACK_LIB_STD_SGI MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 

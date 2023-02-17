@@ -13,25 +13,26 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_LIB_STD_CXX`]
+/* tag::reference[]
+= `MSGPACK_LIB_STD_CXX`
 
-[@http://libcxx.llvm.org/ libc++] C++ Standard Library.
+http://libcxx.llvm.org/[libc++] {CPP} Standard Library.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`_LIBCPP_VERSION`] [__predef_detection__]]
+| `+_LIBCPP_VERSION+` | {predef_detection}
 
-    [[`_LIBCPP_VERSION`] [V.0.P]]
-    ]
- */
+| `+_LIBCPP_VERSION+` | V.0.P
+|===
+*/ // end::reference[]
 
 #define MSGPACK_LIB_STD_CXX MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 
 #if defined(_LIBCPP_VERSION)
 #   undef MSGPACK_LIB_STD_CXX
-#   define MSGPACK_LIB_STD_CXX MSGPACK_PREDEF_MAKE_10_VPPP(_LIBCPP_VERSION)
+#   define MSGPACK_LIB_STD_CXX MSGPACK_PREDEF_MAKE_10_VVPPP(_LIBCPP_VERSION)
 #endif
 
 #if MSGPACK_LIB_STD_CXX

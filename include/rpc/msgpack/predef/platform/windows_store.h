@@ -9,23 +9,31 @@ http://www.boost.org/LICENSE_1_0.txt)
 #ifndef MSGPACK_PREDEF_PLAT_WINDOWS_STORE_H
 #define MSGPACK_PREDEF_PLAT_WINDOWS_STORE_H
 
-#include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 #include <rpc/msgpack/predef/os/windows.h>
+#include <rpc/msgpack/predef/platform/windows_uwp.h>
+#include <rpc/msgpack/predef/version_number.h>
 
-/*`
-[heading `MSGPACK_PLAT_WINDOWS_STORE`]
+/* tag::reference[]
+= `MSGPACK_PLAT_WINDOWS_STORE`
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+https://docs.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide[UWP]
+for Windows Store development.
 
-    [[`WINAPI_FAMILY == WINAPI_FAMILY_APP`] [__predef_detection__]]
-    ]
- */
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
+
+| `WINAPI_FAMILY == WINAPI_FAMILY_PC_APP` | {predef_detection}
+| `WINAPI_FAMILY == WINAPI_FAMILY_APP` (deprecated) | {predef_detection}
+|===
+*/ // end::reference[]
 
 #define MSGPACK_PLAT_WINDOWS_STORE MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 
-#if MSGPACK_OS_WINDOWS && defined(WINAPI_FAMILY) && WINAPI_FAMILY == WINAPI_FAMILY_APP
+#if MSGPACK_OS_WINDOWS && \
+    ((defined(WINAPI_FAMILY_PC_APP) && WINAPI_FAMILY == WINAPI_FAMILY_PC_APP) || \
+     (defined(WINAPI_FAMILY_APP)    && WINAPI_FAMILY == WINAPI_FAMILY_APP))
 #   undef MSGPACK_PLAT_WINDOWS_STORE
 #   define MSGPACK_PLAT_WINDOWS_STORE MSGPACK_VERSION_NUMBER_AVAILABLE
 #endif

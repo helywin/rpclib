@@ -11,22 +11,23 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <rpc/msgpack/predef/version_number.h>
 #include <rpc/msgpack/predef/make.h>
 
-/*`
-[heading `MSGPACK_COMP_DEC`]
+/* tag::reference[]
+= `MSGPACK_COMP_DEC`
 
-[@http://www.openvms.compaq.com/openvms/brochures/deccplus/ Compaq C/C++] compiler.
+http://www.openvms.compaq.com/openvms/brochures/deccplus/[Compaq C/{CPP}] compiler.
 Version number available as major, minor, and patch.
 
-[table
-    [[__predef_symbol__] [__predef_version__]]
+[options="header"]
+|===
+| {predef_symbol} | {predef_version}
 
-    [[`__DECCXX`] [__predef_detection__]]
-    [[`__DECC`] [__predef_detection__]]
+| `+__DECCXX+` | {predef_detection}
+| `+__DECC+` | {predef_detection}
 
-    [[`__DECCXX_VER`] [V.R.P]]
-    [[`__DECC_VER`] [V.R.P]]
-    ]
- */
+| `+__DECCXX_VER+` | V.R.P
+| `+__DECC_VER+` | V.R.P
+|===
+*/ // end::reference[]
 
 #define MSGPACK_COMP_DEC MSGPACK_VERSION_NUMBER_NOT_AVAILABLE
 
@@ -38,7 +39,7 @@ Version number available as major, minor, and patch.
 #       define MSGPACK_COMP_DEC_DETECTION MSGPACK_PREDEF_MAKE_10_VVRR0PP00(__DECC_VER)
 #   endif
 #   if !defined(MSGPACK_COMP_DEC_DETECTION)
-#       define MSGPACK_COM_DEC_DETECTION MSGPACK_VERSION_NUMBER_AVAILABLE
+#       define MSGPACK_COMP_DEC_DETECTION MSGPACK_VERSION_NUMBER_AVAILABLE
 #   endif
 #endif
 
